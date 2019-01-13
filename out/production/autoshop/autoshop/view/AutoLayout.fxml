@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autoshop.controller.AutoController">
+<top>
+    <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" text="File">
+                <items>
+                  <MenuItem fx:id="close1" mnemonicParsing="false" onAction="#handle_exit" text="De facut" />
+                    <MenuItem fx:id="close" mnemonicParsing="false" onAction="#handle_exit" text="Close" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="De facut" />
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem fx:id="help" mnemonicParsing="false" onAction="#handle_help" text="About" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+</top>
+<center>
+    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+            <Tab fx:id="tab_tranzactii" text="Tranzactii">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <TitledPane animated="false" collapsible="false" layoutY="-2.0" prefHeight="515.0" prefWidth="162.0" text="Operatiuni">
+                                <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="488.0" prefWidth="152.0">
+                                        <children>
+                                            <Button fx:id="u_tranzactii" layoutX="37.0" layoutY="37.0" mnemonicParsing="false" onAction="#select_tranzactie" prefHeight="42.0" prefWidth="84.0" text="Update&#10; tabel" />
+                                            <Button fx:id="c_tranzactii" layoutX="37.0" layoutY="110.0" mnemonicParsing="false" onAction="#add_tranzactie" text="Adauga&#10;Tranzactie" />
+                                            <Button fx:id="d_tranzactii" layoutX="37.0" layoutY="252.0" mnemonicParsing="false" onAction="#delete_tranzactie" text="Stergere &#10;Tranzactie" />
+                                            <Button fx:id="r_tranzactii" layoutX="37.0" layoutY="182.0" mnemonicParsing="false" onAction="#edit_tranzactie" text="Editare &#10;Tranzactie" />
+                                            <Label layoutX="3.0" layoutY="320.0" text="Din culise:" />
+                                            <TextArea fx:id="result_tranzactii" editable="false" layoutX="14.0" layoutY="345.0" prefHeight="129.0" prefWidth="133.0" />
+                                        </children>
+                                    </AnchorPane>
+                                </content>
+                            </TitledPane>
+                            <TitledPane animated="false" collapsible="false" layoutX="164.0" prefHeight="510.0" prefWidth="480.0" text="Date">
+                                <content>
+                                    <AnchorPane>
+                                        <children>
+                                            <TableView fx:id="tabel_tranzactii" layoutY="-1.0" prefHeight="501.0" prefWidth="478.0">
+                                                <columns>
+                                                    <TableColumn fx:id="id_tranzactie" prefWidth="104.0" text="Id Tranzactie" />
+                                                    <TableColumn fx:id="masina" prefWidth="79.0" text="Masina" />
+                                                    <TableColumn fx:id="client" prefWidth="114.0" text="Client" />
+                                                    <TableColumn fx:id="data" prefWidth="85.0" text="Data" />
+                                                    <TableColumn prefWidth="90.0" text="Agent" />
+                                                </columns>
+                                            </TableView>
+                                        </children>
+                                    </AnchorPane>
+                                </content>
+                            </TitledPane>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab fx:id="tab_masini" text="Inventar">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <TitledPane animated="false" collapsible="false" layoutY="-2.0" prefHeight="515.0" prefWidth="162.0" text="Operatiuni">
+                                        <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="154.0">
+                                                <children>
+                                                    <Button fx:id="u_masina" layoutX="46.0" layoutY="31.0" mnemonicParsing="false" onAction="#select_masina" text="Update&#10;Tabel" />
+                                                    <Button fx:id="c_masina" layoutX="46.0" layoutY="104.0" mnemonicParsing="false" onAction="#add_masina" text="Adauga&#10;Masina" />
+                                                    <Button fx:id="d_masina" layoutX="46.0" layoutY="246.0" mnemonicParsing="false" onAction="#delete_masina" text="Sterge &#10;Masina" />
+                                                    <Button fx:id="ed_masina" layoutX="46.0" layoutY="176.0" mnemonicParsing="false" onAction="#edt_masina" text="Editare&#10;Masina" />
+                                                    <Label layoutX="12.0" layoutY="315.0" text="Din culise:" />
+                                                    <TextArea fx:id="result_inventar" editable="false" layoutX="12.0" layoutY="345.0" prefHeight="129.0" prefWidth="133.0" />
+                                                </children>
+                                            </AnchorPane>
+                                        </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" collapsible="false" layoutX="164.0" prefHeight="510.0" prefWidth="480.0" text="Date">
+                                        <content>
+                                            <AnchorPane>
+                                                <children>
+                                                    <TableView fx:id="tabel_inventar" layoutY="-1.0" prefHeight="497.0" prefWidth="478.0">
+                                                        <columns>
+                                                            <TableColumn fx:id="column_id_vehicul" prefWidth="52.0" text="ID&#10;Auto" />
+                                                            <TableColumn fx:id="column_marca_model" prefWidth="88.0" text="Model" />
+                                                            <TableColumn fx:id="column_an" prefWidth="41.0" text="An" />
+                                                            <TableColumn fx:id="column_km" prefWidth="41.0" text="KM" />
+                                                            <TableColumn fx:id="column_combustibil" prefWidth="97.0" text="Combustibil" />
+                                                            <TableColumn fx:id="column_transmisie" prefWidth="95.0" text="Transmisie" />
+                                                <TableColumn fx:id="column_pret" prefWidth="63.0" text="Pret" />
+                                                        </columns>
+                                                    </TableView>
+                                                </children>
+                                            </AnchorPane>
+                                        </content>
+                                    </TitledPane>
+                                </children>
+                            </AnchorPane>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab fx:id="tab_modele" text="Marci/modele noi">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <TitledPane animated="false" collapsible="false" layoutY="-2.0" prefHeight="515.0" prefWidth="162.0" text="Operatiuni">
+                                        <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="154.0">
+                                                <children>
+                                                    <Button fx:id="u_model" layoutX="36.0" layoutY="45.0" mnemonicParsing="false" onAction="#select_model" prefHeight="42.0" prefWidth="89.0" text="Update &#10;tabel" />
+                                                    <Button fx:id="c_model" layoutX="36.0" layoutY="118.0" mnemonicParsing="false" onAction="#add_model" text="Adaugare&#10;model nou" />
+                                                    <Button fx:id="d_model" layoutX="36.0" layoutY="260.0" mnemonicParsing="false" onAction="#delete_model" prefHeight="42.0" prefWidth="89.0" text="Stergere&#10;model" />
+                                                    <Button fx:id="ed_model" layoutX="36.0" layoutY="190.0" mnemonicParsing="false" onAction="#edit_model" prefHeight="42.0" prefWidth="86.0" text="Editare&#10; model" />
+                                                    <Label layoutX="2.0" layoutY="314.0" text="Din culise:" />
+                                                    <TextArea fx:id="result_modele" editable="false" layoutX="13.0" layoutY="345.0" prefHeight="129.0" prefWidth="133.0" />
+                                                </children>
+                                            </AnchorPane>
+                                        </content>
+                                    </TitledPane>
+                                    <TitledPane animated="false" collapsible="false" layoutX="164.0" prefHeight="510.0" prefWidth="480.0" text="Date">
+                                        <content>
+                                            <AnchorPane>
+                                                <children>
+                                                    <TableView fx:id="tabel_modele" layoutY="-1.0" prefHeight="511.0" prefWidth="478.0">
+                                                        <columns>
+                                                            <TableColumn fx:id="marca" prefWidth="179.0" text="Marca" />
+                                                            <TableColumn fx:id="model_marca" prefWidth="296.0" text="Model" />
+                                                        </columns>
+                                                    </TableView>
+                                                </children>
+                                            </AnchorPane>
+                                        </content>
+                                    </TitledPane>
+                                </children>
+                            </AnchorPane>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab fx:id="tab_clienti" text="Clienti">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                        <children>
+                                            <TitledPane animated="false" collapsible="false" layoutY="-2.0" prefHeight="515.0" prefWidth="162.0" text="Operatiuni">
+                                                <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="154.0">
+                                                        <children>
+                                                            <Button fx:id="u_clienti" layoutX="36.0" layoutY="45.0" mnemonicParsing="false" onAction="#slect_clienti" prefHeight="42.0" prefWidth="89.0" text="Update &#10;tabel" />
+                                                            <Button fx:id="add_clienti" layoutX="36.0" layoutY="118.0" mnemonicParsing="false" onAction="#add_client" text="Adaugare&#10;client nou" />
+                                                            <Button fx:id="d_client" layoutX="36.0" layoutY="260.0" mnemonicParsing="false" onAction="#delete_client" prefHeight="42.0" prefWidth="89.0" text="Stergere&#10;client" />
+                                                            <Button fx:id="ed_client" layoutX="36.0" layoutY="190.0" mnemonicParsing="false" onAction="#edit_client" prefHeight="42.0" prefWidth="86.0" text="Editare&#10; client" />
+                                                            <Label layoutX="2.0" layoutY="314.0" text="Din culise:" />
+                                                            <TextArea fx:id="result_clienti" editable="false" layoutX="13.0" layoutY="345.0" prefHeight="129.0" prefWidth="133.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane animated="false" collapsible="false" layoutX="164.0" prefHeight="510.0" prefWidth="480.0" text="Date">
+                                                <content>
+                                                    <AnchorPane>
+                                                        <children>
+                                                            <TableView fx:id="tabel_client" layoutY="-1.0" prefHeight="505.0" prefWidth="478.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="id" prefWidth="63.0" text="id" />
+                                                                    <TableColumn fx:id="nume" prefWidth="90.0" text="Nume" />
+                                                                    <TableColumn fx:id="prenume" prefWidth="66.0" text="Prenume" />
+                                                                    <TableColumn fx:id="cnp" prefWidth="137.0" text="CNP" />
+                                                                    <TableColumn fx:id="telefon" prefWidth="118.0" text="Telefon" />
+                                                                </columns>
+                                                            </TableView>
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                        </children>
+                                    </AnchorPane>
+                                </children>
+                            </AnchorPane>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab fx:id="tab_agenti" text="Agenti">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="158.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="638.0">
+                                       <children>
+                                          <TitledPane animated="false" collapsible="false" layoutY="-2.0" prefHeight="515.0" prefWidth="162.0" text="Operatiuni">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="507.0" prefWidth="160.0">
+                                                   <children>
+                                                      <Button fx:id="u_agenti" layoutX="36.0" layoutY="45.0" mnemonicParsing="false" onAction="#select_agenti" prefHeight="42.0" prefWidth="89.0" text="Update &#10;tabel" />
+                                                      <Button fx:id="ad_agent" layoutX="36.0" layoutY="118.0" mnemonicParsing="false" onAction="#add_agent" text="Adaugare&#10;agent nou" />
+                                                      <Button fx:id="d_agent" layoutX="36.0" layoutY="260.0" mnemonicParsing="false" onAction="#delete_agent" prefHeight="42.0" prefWidth="89.0" text="Stergere&#10;client" />
+                                                      <Button fx:id="ed_agent" layoutX="36.0" layoutY="190.0" mnemonicParsing="false" onAction="#edit_agent" prefHeight="42.0" prefWidth="86.0" text="Editare&#10;agent" />
+                                                      <Label layoutX="2.0" layoutY="314.0" text="Din culise:" />
+                                                      <TextArea fx:id="result_agenti" editable="false" layoutX="13.0" layoutY="345.0" prefHeight="129.0" prefWidth="133.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" collapsible="false" layoutX="164.0" prefHeight="510.0" prefWidth="480.0" text="Date">
+                                             <content>
+                                                <AnchorPane>
+                                                   <children>
+                                                      <TableView fx:id="tabel_agenti" layoutY="-1.0" prefHeight="506.0" prefWidth="478.0">
+                                                         <columns>
+                                                            <TableColumn prefWidth="63.0" text="id" />
+                                                            <TableColumn fx:id="nume_ag" prefWidth="90.0" text="Nume" />
+                                                            <TableColumn fx:id="prenume_ag" prefWidth="66.0" text="Prenume" />
+                                                            <TableColumn fx:id="cnp_ag" prefWidth="137.0" text="CNP" />
+                                                            <TableColumn fx:id="telefon_ag" prefWidth="118.0" text="Telefon" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </TitledPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</center>
+</BorderPane>
