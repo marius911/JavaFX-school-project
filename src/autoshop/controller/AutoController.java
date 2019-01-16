@@ -217,14 +217,14 @@ public class AutoController {
   @FXML
   void add_masina(ActionEvent event)  {
 try{
-    FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("demo.fxml"));
-    Parent root1 = (Parent) fxmloader.load();
-        System.out.println("Test: aceasta linie s-a rulat");
+    FXMLLoader fXMLLoader = new FXMLLoader();
+    fXMLLoader.setLocation(getClass().getResource("demo.fxml"));
     Stage stage = new Stage();
-    stage.setTitle("Demo");
-    stage.setScene(new Scene(root1));
+    Scene scene = new Scene(fXMLLoader.load());
+    stage.setScene(scene);
     stage.initModality(Modality.APPLICATION_MODAL);
-    stage.showAndWait();
+    stage.setTitle("New Window");
+    stage.show();
 }catch (Exception e){
     System.out.println("nu merge"+" "+e);
 }
