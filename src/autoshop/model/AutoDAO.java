@@ -24,10 +24,10 @@ public class AutoDAO {
       //Get ResultSet from dbExecuteQuery method
       ResultSet rsEmp = DBUtil.dbExecuteQuery(selectStmt);
 
-      //Send ResultSet to the getEmployeeFromResultSet method and get employee object
+      //Send ResultSet to the getAutoFromResultSet method and get employee object
       Auto auto = getAutoFromResultSet(rsEmp);
 
-      //Return employee object
+      //Return auto object
       return auto;
     } catch (SQLException e) {
       System.out.println("While searching an auto with " + id_vehicul + " id, an error occurred: " + e);
@@ -52,7 +52,7 @@ public class AutoDAO {
   }
 
   //*******************************
-  //SELECT Employees
+  //SELECT Auto
   //*******************************
   public static ObservableList<Auto> searchAutos () throws SQLException, ClassNotFoundException {
     //Declare a SELECT statement
@@ -90,14 +90,15 @@ public class AutoDAO {
       aut.setTransmisie(rs.getString("trasnmisie"));
       aut.setPret(rs.getString("pret"));
 
-      //Add employee to the ObservableList
+      //Add auto to the ObservableList
       autList.add(aut);
 
     }
-    //return empList (ObservableList of Employees)
+    //return autList (ObservableList of Employees)
     return autList;
   }
 
+  // DE adaptat codul la aplicatia mea
   //*************************************
   //UPDATE an employee's email address
   //*************************************

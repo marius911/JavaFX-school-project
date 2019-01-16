@@ -18,7 +18,7 @@ public class DBUtil {
   public static void dbConnect() throws SQLException, ClassNotFoundException {
     //Setting MySQL JDBC Driver
     try {
-      Class.forName("com.mysql.cj.jdbc.Driver");
+      Class.forName("com.mysql.jdbc.Driver");
     } catch (ClassNotFoundException e) {
       System.out.println("Where is your MySQL JDBC Driver?");
       e.printStackTrace();
@@ -27,7 +27,7 @@ public class DBUtil {
 
     System.out.println("MySQL JDBC Driver Registered!");
 
-    //Establish the Oracle Connection using Connection String
+    //Establish the MysQL Connection using Connection String
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Aplicatie_Java/C","root","Parolameaeparola7&");
     } catch (SQLException e) {

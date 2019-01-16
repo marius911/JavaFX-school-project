@@ -2,15 +2,19 @@ package autoshop.controller;
 
 import autoshop.model.Auto;
 import autoshop.model.AutoDAO;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.stage.Modality;
 
 public class AutoController {
 
@@ -51,16 +55,19 @@ public class AutoController {
   private TableView<?> tabel_tranzactii;
 
   @FXML
-  private TableColumn<?, ?> id_tranzactie;
+  private TableColumn<?, ?> column_id_tranzactie;
 
   @FXML
-  private TableColumn<?, ?> masina;
+  private TableColumn<?, ?> column_masina;
 
   @FXML
-  private TableColumn<?, ?> client;
+  private TableColumn<?, ?> column_client;
 
   @FXML
-  private TableColumn<?, ?> data;
+  private TableColumn<?, ?> column_data;
+
+  @FXML
+  private TableColumn<?, ?> column_agent;
 
   @FXML
   private Tab tab_masini;
@@ -208,11 +215,22 @@ public class AutoController {
   }
 
   @FXML
-  void add_masina(ActionEvent event) {
-
+  void add_masina(ActionEvent event)  {
+try{
+    FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("demo.fxml"));
+    Parent root1 = (Parent) fxmloader.load();
+        System.out.println("Test: aceasta linie s-a rulat");
+    Stage stage = new Stage();
+    stage.setTitle("Demo");
+    stage.setScene(new Scene(root1));
+    stage.initModality(Modality.APPLICATION_MODAL);
+    stage.showAndWait();
+}catch (Exception e){
+    System.out.println("nu merge"+" "+e);
+}
   }
-
   @FXML
+
   void add_model(ActionEvent event) {
 
   }
@@ -295,7 +313,7 @@ public class AutoController {
       /* Populate Employees on TableView */
       populateAuto(autList);
     } catch (SQLException e){
-      System.out.println("Error occurred while getting autod information from DB.\n" + e);
+      System.out.println("Error occurred while getting autos information from DB.\n" + e);
       throw e;
     }
 
@@ -337,4 +355,6 @@ public class AutoController {
     //Set items to the tabel Inventar
     tabel_inventar.setItems(autList);
   }
+
+
 }

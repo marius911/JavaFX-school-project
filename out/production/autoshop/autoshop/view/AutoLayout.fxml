@@ -65,11 +65,11 @@
                                         <children>
                                             <TableView fx:id="tabel_tranzactii" layoutY="-1.0" prefHeight="501.0" prefWidth="478.0">
                                                 <columns>
-                                                    <TableColumn fx:id="id_tranzactie" prefWidth="104.0" text="Id Tranzactie" />
-                                                    <TableColumn fx:id="masina" prefWidth="79.0" text="Masina" />
-                                                    <TableColumn fx:id="client" prefWidth="114.0" text="Client" />
-                                                    <TableColumn fx:id="data" prefWidth="85.0" text="Data" />
-                                                    <TableColumn prefWidth="90.0" text="Agent" />
+                                                    <TableColumn fx:id="column_id_tranzactie" prefWidth="104.0" text="Id Tranzactie" />
+                                                    <TableColumn fx:id="column_masina" prefWidth="79.0" text="Masina" />
+                                                    <TableColumn fx:id="column_client" prefWidth="114.0" text="Client" />
+                                                    <TableColumn fx:id="column_data" prefWidth="85.0" text="Data" />
+                                                    <TableColumn fx:id="column_agent" prefWidth="90.0" text="Agent" />
                                                 </columns>
                                             </TableView>
                                         </children>
