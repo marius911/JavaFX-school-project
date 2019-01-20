@@ -102,15 +102,10 @@ public class AutoDAO {
   //*************************************
   //UPDATE an employee's email address
   //*************************************
-  public static void updateEmpEmail(String empId, String empEmail) throws SQLException, ClassNotFoundException {
+  public static void updateAuto(String id, String model, String an, String km, String combustibil, String transmisie, String pret) throws SQLException, ClassNotFoundException {
     //Declare a UPDATE statement
-    String updateStmt
-            = "BEGIN\n"
-            + "   UPDATE employees\n"
-            + "      SET EMAIL = '" + empEmail + "'\n"
-            + "    WHERE EMPLOYEE_ID = " + empId + ";\n"
-            + "   COMMIT;\n"
-            + "END;";
+    String updateStmt = "UPDATE `inventar_auto` SET `marca_model` = '"+model+"', `an` = '"+an+"', `km` = '"+km+"', `combustibil` = '"+combustibil+"', `trasnmisie` = '"+transmisie+"', `pret` = '"+pret+"' WHERE `inventar_auto`.`id_vehicul` = '"+id+"'";
+   // "UPDATE `inventar_auto` SET `marca_model` = 'Fabia', `an` = '2343', `km` = '3464', `combustibil` = 'Diesel', `trasnmisie` = 'DSG', `pret` = '566' WHERE `inventar_auto`.`id_vehicul` = 9";
 
     //Execute UPDATE operation
     try {
@@ -122,16 +117,11 @@ public class AutoDAO {
   }
 
   //*************************************
-  //DELETE an employee
+  //DELETE an Auto
   //*************************************
   public static void deleteAutoWithId(String empId) throws SQLException, ClassNotFoundException {
     //Declare a DELETE statement
-    String updateStmt
-            = "BEGIN\n"
-            + "   DELETE FROM employees\n"
-            + "         WHERE employee_id =" + empId + ";\n"
-            + "   COMMIT;\n"
-            + "END;";
+    String updateStmt = "DELETE FROM `inventar_auto` WHERE `inventar_auto`.`id_vehicul` = " + empId;
 
     //Execute UPDATE operation
     try {
@@ -143,7 +133,7 @@ public class AutoDAO {
   }
 
   //*************************************
-  //INSERT an employee
+  //INSERT an Auto
   //*************************************
   public static void insertAuto(String model, String an, String km, String combustibil, String transmisie, String pret) throws SQLException, ClassNotFoundException {
     //Declare a DELETE statement
