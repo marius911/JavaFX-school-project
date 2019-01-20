@@ -145,16 +145,10 @@ public class AutoDAO {
   //*************************************
   //INSERT an employee
   //*************************************
-  public static void insertAuto(String name, String lastname, String email) throws SQLException, ClassNotFoundException {
+  public static void insertAuto(String model, String an, String km, String combustibil, String transmisie, String pret) throws SQLException, ClassNotFoundException {
     //Declare a DELETE statement
-    String updateStmt
-            = "BEGIN\n"
-            + "INSERT INTO employees\n"
-            + "(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID)\n"
-            + "VALUES\n"
-            + "(sequence_employee.nextval, '" + name + "', '" + lastname + "','" + email + "', SYSDATE, 'IT_PROG');\n"
-            + "END;";
-
+    String updateStmt = "INSERT INTO inventar_auto (id_vehicul, marca_model, an, km, combustibil, trasnmisie, pret, evaluare_mecanic) VALUES ( NULL, '" + model + "', '" + an + "','" + km + "','" + combustibil + "','" + transmisie + "','" + pret + "', '');";
+      System.out.println(updateStmt);
     //Execute DELETE operation
     try {
       DBUtil.dbExecuteUpdate(updateStmt);

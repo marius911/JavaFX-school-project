@@ -13,7 +13,9 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("view/AutoLayout.fxml"));
         primaryStage.setTitle("Autoshop");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show(); 
+        
     }
 
 

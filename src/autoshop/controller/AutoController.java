@@ -218,12 +218,13 @@ public class AutoController {
   void add_masina(ActionEvent event)  {
 try{
     FXMLLoader fXMLLoader = new FXMLLoader();
-    fXMLLoader.setLocation(getClass().getResource("demo.fxml"));
+    fXMLLoader.setLocation(getClass().getResource("edit-create.fxml"));
     Stage stage = new Stage();
     Scene scene = new Scene(fXMLLoader.load());
     stage.setScene(scene);
     stage.initModality(Modality.APPLICATION_MODAL);
     stage.setTitle("New Window");
+    stage.setResizable(false);
     stage.show();
 }catch (Exception e){
     System.out.println("nu merge"+" "+e);
@@ -252,7 +253,8 @@ try{
 
   @FXML
   void delete_masina(ActionEvent event) {
-
+      Auto auto = tabel_inventar.getSelectionModel().getSelectedItem();
+      System.out.println(auto.getId_vehicul());
   }
 
   @FXML
@@ -287,6 +289,7 @@ try{
 
   @FXML
   void edt_masina(ActionEvent event) {
+      
 
   }
 
